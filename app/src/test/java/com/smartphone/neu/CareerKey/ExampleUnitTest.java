@@ -1,4 +1,4 @@
-package com.example.luqifei.homework;
+package com.smartphone.neu.CareerKey;
 
 import org.junit.Test;
 
