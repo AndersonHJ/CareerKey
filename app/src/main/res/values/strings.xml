@@ -16,12 +16,15 @@
     </string>
     <string name="album_name">CameraSample</string>
     <string name="cannot">Cannot</string>
-    <string name="title_activity_lecture">LectureActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_lecture2">Lecture2Activity</string>
 
+
+    <string name="title_activity_lecture">LectureActivity</string>
+    <string name="title_event">Event</string>
+    <string name="title_course">Course</string>
+    <string name="title_1v1meeting">1v1Meeting</string>
+    <string name="title_activity_lecturer">LecturerActivity</string>
+
+    <string name="navigation_title">CareerKey</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
