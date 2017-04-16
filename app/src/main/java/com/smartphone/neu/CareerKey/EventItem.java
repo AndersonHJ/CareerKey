@@ -9,6 +9,9 @@ import java.util.Date;
 
 public class EventItem {
 
+
+
+
     private String image;
     private String title;
     private Date time;
