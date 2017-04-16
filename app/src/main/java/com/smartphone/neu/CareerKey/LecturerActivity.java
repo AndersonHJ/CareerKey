@@ -25,7 +25,6 @@ import java.util.Date;
 public class LecturerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
     private TextView mTextMessage;
     private ListView eventListView;
 
@@ -167,7 +166,7 @@ public class LecturerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.logout) {
             return true;
         }
 
@@ -181,11 +180,11 @@ public class LecturerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-
+            startActivity(new Intent(LecturerActivity.this, ProfileActivity.class));
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_setting) {
-
+           // startActivity(new Intent(LecturerActivity.this, SettingsActivity.class));
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_feedback) {
