@@ -89,43 +89,43 @@ public class LecturerActivity extends AppCompatActivity
         eventListView = (ListView) findViewById(R.id.event_list);
 
         ArrayList<EventItem> list = new ArrayList<>();
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
+//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
 
 
         eventAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list);
 
         ArrayList<EventItem> list2 = new ArrayList<>();
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
 
         courseAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list2);
 
         ArrayList<EventItem> list3 = new ArrayList<>();
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
 
         meetingAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list3);
 
