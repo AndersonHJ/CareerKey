@@ -180,7 +180,7 @@ public class LecturerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            startActivity(new Intent(LecturerActivity.this, ProfileActivity.class));
+            startActivity(new Intent(LecturerActivity.this, UserProfileActivity.class));
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_setting) {
