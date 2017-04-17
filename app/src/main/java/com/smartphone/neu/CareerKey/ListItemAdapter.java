@@ -49,7 +49,7 @@ public class ListItemAdapter extends ArrayAdapter<EventItem> {
 
         title.setText(list.get(position).getTitle());
         //imageView.setBackgroundColor();
-        time.setText(list.get(position).getTime());
+        time.setText(list.get(position).getStartTime());
         description.setText(list.get(position).getDescription());
 
 
