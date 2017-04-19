@@ -22,7 +22,7 @@ public class DataManager {
     }
 
     public UserItem getStudent(String email){
-        return null;
+        return new UserItem("Mike", "Done", "mik.don@gmail.com", true, "Seattle", "Northeastern University");
     }
 
     public void setStudent(UserItem student){
