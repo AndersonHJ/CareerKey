@@ -98,24 +98,10 @@ public class LecturerActivity extends AppCompatActivity
         eventAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list);
 
         List<EventItem> list2 = manager.getCourses();
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
 
         courseAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list2);
 
         List<LecturerItem> list3 = manager.getLecturers();
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
 
         meetingAdapter = new LecturerListAdapter(this, R.layout.lecturer_item, R.id.title_item, list3);
 
