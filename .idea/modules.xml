@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CareerKey.iml" filepath="$PROJECT_DIR$/CareerKey.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Smartphone.iml" filepath="$PROJECT_DIR$/Smartphone.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
