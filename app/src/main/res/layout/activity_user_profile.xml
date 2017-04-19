@@ -86,9 +86,8 @@
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/radioGroup"
-            android:layout_marginStart="44dp"
-            android:paddingLeft="8dp"
             android:checked="false"
+            android:paddingLeft="8dp"
 
             android:text="Lecturer"
             />
@@ -108,7 +107,7 @@
         android:id="@+id/btnUserProfileSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup"
+        android:layout_below="@+id/radiogroupUserType"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:text="Submit"/>
