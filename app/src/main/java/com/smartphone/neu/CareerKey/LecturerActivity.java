@@ -26,8 +26,9 @@ import java.util.List;
 public class LecturerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    static UserItem user;
-    static LecturerItem lecturer;
+//    static UserItem user;
+//    static LecturerItem lecturer;
+
 
     private TextView mTextMessage;
     private ListView eventListView;
@@ -35,6 +36,8 @@ public class LecturerActivity extends AppCompatActivity
     ListItemAdapter eventAdapter;
     ListItemAdapter courseAdapter;
     LecturerListAdapter meetingAdapter;
+
+    DataManager manager = null;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -92,7 +95,7 @@ public class LecturerActivity extends AppCompatActivity
 
         eventListView = (ListView) findViewById(R.id.event_list);
 
-        DataManager manager = new DataManager();
+        manager = new DataManager();
         List<EventItem> list = manager.getEvents();
 
         eventAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list);
@@ -156,7 +159,9 @@ public class LecturerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            startActivity(new Intent(LecturerActivity.this, UserProfileActivity.class));
+            Intent intent = new Intent(LecturerActivity.this, UserProfileActivity.class);
+            intent.putExtra("User", manager.getStudent("hou@gmail.com"));
+            startActivity(intent);
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_setting) {
