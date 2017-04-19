@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                    } else {
+
                     }
 
                 }

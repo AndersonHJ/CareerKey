@@ -1,30 +1,55 @@
 package com.smartphone.neu.CareerKey;
 
+import java.io.Serializable;
+
 /**
  * Created by houjian on 4/17/17.
  */
 
-class UserItem {
+class UserItem implements Serializable{
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public void setType(Boolean type) {
+        this.type = type;
+    }
+
 
     private String firstName;
     private String lastName;
     private String email;
-    private String gender;
-    private String birthday;
-    private String highestDegree;
+    private String school;
+    private Boolean type;
     private String city;
-    private String state;
 
-    UserItem(String firstName, String lastName, String email, String gender, String birthday,
-             String highestDegree, String city, String state){
+
+
+
+
+    UserItem(String firstName, String lastName, String email, boolean type, String city, String state){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.highestDegree = highestDegree;
+        this.type = type;
         this.city = city;
-        this.state = state;
     }
 
     public String getFirstName(){
@@ -39,23 +64,14 @@ class UserItem {
         return email;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public String getHighestDegree() {
-        return highestDegree;
+    public Boolean getType() {
+        return type;
     }
 
     public String getCity() {
         return city;
     }
-
-    public String getState() {
-        return state;
+    public String getSchool() {
+        return school;
     }
 }

@@ -8,22 +8,22 @@
 
 
     <EditText
-        android:id="@+id/txtUserName"
+        android:id="@+id/txtUserFirstName"
         android:layout_width="0dp"
         android:layout_height="41dp"
         android:layout_marginBottom="26dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Your Name..."
+        android:text="Your First Name..."
         app:layout_constraintBottom_toTopOf="@+id/txtUserEmail"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileName"
-        app:layout_constraintVertical_bias="0.409"
-        android:layout_marginEnd="28dp"/>
+        app:layout_constraintVertical_bias="0.412"/>
 
     <TextView
         android:id="@+id/profileName"
@@ -153,5 +153,15 @@
             tools:layout_editor_absoluteY="391dp"/>
 
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/txtUserLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Your Last Name..."
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="222dp"/>
 
 </android.support.constraint.ConstraintLayout>

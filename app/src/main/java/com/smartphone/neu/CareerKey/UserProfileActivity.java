@@ -16,21 +16,27 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class UserProfileActivity extends AppCompatActivity {
-    private EditText userName;
+    private EditText userFirstName;
+    private EditText userLastName;
     private EditText userSchool;
+    private EditText userEmail;
     private EditText userCity;
     private RadioGroup userTypeGroup;
     private RadioButton userTypeStudent;
     private RadioButton userTypeLecturer;
     private boolean userType;   //false is student, true is lecturer
     private Button userProfileSubmit;
+    private Intent userProfileIntent;
+    private UserItem userItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        userName = (EditText) findViewById(R.id.txtUserName);
+        userFirstName = (EditText) findViewById(R.id.txtUserFirstName);
+        userLastName = (EditText) findViewById(R.id.txtUserLastName);
+        userEmail = (EditText) findViewById(R.id.txtUserEmail);
         userSchool = (EditText) findViewById(R.id.txtUserSchool);
         userCity = (EditText) findViewById(R.id.txtUserCity);
 
@@ -49,20 +55,30 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = new Intent();
-        intent.putExtra("userName", userName.toString());
-        intent.putExtra("userSchool", userSchool.toString());
-        intent.putExtra("userCity", userCity.toString());
-        intent.putExtra("userType", userType);
+        userProfileIntent = new Intent();
+        userItem = getUserItem();
+
+        userEmail.setText(userItem.getEmail());
+
+        userItem.setFirstName(userFirstName.toString());
+        userItem.setLastName(userLastName.toString());
+        userItem.setCity(userCity.toString());
+        userItem.setSchool(userSchool.toString());
+        userItem.set;
 
         userProfileSubmit = (Button) findViewById(R.id.btnUserProfileSubmit);
         userProfileSubmit.setOnClickListener(new uploadUserProfileListener());
     }
 
+    private UserItem getUserItem() {
+        Intent intent = getIntent();
+        return (UserItem) intent.getSerializableExtra("User");
+    }
+
     class uploadUserProfileListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            //upload intent
+
             Toast.makeText(getApplicationContext(), "Submit Successfully!", Toast.LENGTH_LONG).show();
         }
     }
