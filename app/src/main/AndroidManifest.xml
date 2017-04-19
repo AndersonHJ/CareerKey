@@ -48,16 +48,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".PublishActivity"/>
-        <activity
-            android:name=".ProfileActivity"
+        <activity android:name=".UserProfileActivity">
             android:label="@string/title_activity_profile"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.smartphone.neu.CareerKey.MainActivity"/>
-        </activity>
-        <activity android:name=".UserProfileActivity">
         </activity>
     </application>
 

@@ -1,13 +1,14 @@
 package com.smartphone.neu.CareerKey;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by houjian on 3/31/17.
  */
 
-public class EventItem {
+public class EventItem implements Serializable {
     private String image;
     private String title;
     private Date startTime;
