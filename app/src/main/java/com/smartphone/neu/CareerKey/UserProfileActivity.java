@@ -64,7 +64,7 @@ public class UserProfileActivity extends AppCompatActivity {
         userItem.setLastName(userLastName.toString());
         userItem.setCity(userCity.toString());
         userItem.setSchool(userSchool.toString());
-        userItem.set;
+        userItem.setType(userType);
 
         userProfileSubmit = (Button) findViewById(R.id.btnUserProfileSubmit);
         userProfileSubmit.setOnClickListener(new uploadUserProfileListener());
@@ -78,7 +78,9 @@ public class UserProfileActivity extends AppCompatActivity {
     class uploadUserProfileListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent();
+            intent.setClass(UserProfileActivity.this, MainActivity.class);
+            UserProfileActivity.this.startActivity(intent);
             Toast.makeText(getApplicationContext(), "Submit Successfully!", Toast.LENGTH_LONG).show();
         }
     }
