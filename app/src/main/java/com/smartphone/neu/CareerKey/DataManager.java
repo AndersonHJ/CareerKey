@@ -128,11 +128,11 @@ public class DataManager {
     public List<LecturerItem> getLecturers(){
         ArrayList<LecturerItem> list = new ArrayList<>();
 
-        list.add(new LecturerItem());
+        return null;
     }
 
     public void addActivity(EventItem activi){
-        List<EventItem> list
+        List<EventItem> list;
         if(activi.getType()==1)
             list = this.getEvents();
         else

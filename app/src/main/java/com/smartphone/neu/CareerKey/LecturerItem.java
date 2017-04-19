@@ -16,7 +16,7 @@ public class LecturerItem implements Serializable {
         this.posted = posted;
     }
 
-    
+
 
 
 }
