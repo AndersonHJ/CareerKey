@@ -1,158 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
-
-    <EditText
-        android:id="@+id/txtUserFirstName"
-        android:layout_width="0dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="26dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Your First Name..."
-        app:layout_constraintBottom_toTopOf="@+id/txtUserEmail"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileName"
-        app:layout_constraintVertical_bias="0.333"/>
 
     <TextView
         android:id="@+id/profileName"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
-        android:text="Profile"
         android:textSize="40dp"
-        android:textAlignment="center"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        android:layout_marginStart="8dp"/>
-
-    <EditText
-        android:id="@+id/txtUserEmail"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="26dp"
-        android:layout_marginRight="28dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Your Email..."
-        app:layout_constraintBottom_toTopOf="@+id/txtUserSchool"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        android:layout_marginEnd="28dp"/>
-
-    <EditText
-        android:id="@+id/txtUserSchool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="28dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Your School..."
-        app:layout_constraintBottom_toTopOf="@+id/txtUserCity"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.398"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="28dp"/>
-
-    <EditText
-        android:id="@+id/txtUserCity"
-        android:layout_width="0dp"
-        android:layout_height="41dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="text|textPersonName"
-        android:text="Your City..."
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toTopOf="@+id/txtUserSchool"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="310dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="28dp"/>
-
-    <Button
-        android:id="@+id/btnUserProfileSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
         android:layout_marginTop="22dp"
-        app:layout_constraintTop_toBottomOf="@+id/radiogroupUserType"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"/>
+        android:text="Profile"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
-    <RadioGroup
-
-        android:id="@+id/radiogroupUserType"
-
+    <EditText
+        android:id="@+id/txtUserFirstName"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
-        android:layout_centerHorizontal="true"
-
-        android:layout_marginLeft="8dp"
-
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUserCity"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
-
-        <RadioButton
-
-            android:id="@+id/radiobtnUserStudent"
-
-            android:layout_width="wrap_content"
-
-            android:layout_height="31dp"
-
-            android:text="Student"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="403dp"/>
-
-        <RadioButton
-
-            android:id="@+id/radiobtnUserLecturer"
-
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-
-            android:checked="false"
-            android:text="Lecturer"
-            tools:layout_editor_absoluteX="219dp"
-            tools:layout_editor_absoluteY="391dp"/>
-
-    </RadioGroup>
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Your First Name..."
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/txtUserLastName"
+        android:layout_alignStart="@+id/txtUserLastName"/>
 
     <EditText
         android:id="@+id/txtUserLastName"
@@ -161,14 +32,85 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your Last Name..."
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="33dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtUserFirstName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toBottomOf="@+id/txtUserEmail"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/txtUserEmail"
+        android:layout_alignStart="@+id/txtUserEmail"/>
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/txtUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email..."
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/profileName"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/txtUserSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Your school..."
+        android:layout_below="@+id/txtUserFirstName"
+        android:layout_alignStart="@+id/txtUserFirstName"/>
+
+    <EditText
+        android:id="@+id/txtUserCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Your City..."
+        android:layout_below="@+id/txtUserSchool"
+        android:layout_alignStart="@+id/txtUserSchool"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/radiogroupUserType"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/txtUserCity"
+        android:layout_alignStart="@+id/txtUserCity"
+        android:layout_alignEnd="@+id/txtUserCity">
+
+        <RadioButton
+            android:id="@+id/radiobtnUserLecturer"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/radioGroup"
+            android:layout_marginStart="44dp"
+            android:paddingLeft="8dp"
+            android:checked="false"
+
+            android:text="Lecturer"
+            />
+
+        <RadioButton
+            android:id="@+id/radiobtnUserStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_alignTop="@+id/radioGroup"
+            android:paddingLeft="8dp"
+            android:text="Student"
+            android:layout_weight="0.56"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnUserProfileSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:text="Submit"/>
+
+</RelativeLayout>
