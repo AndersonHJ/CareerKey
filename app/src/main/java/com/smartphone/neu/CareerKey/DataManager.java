@@ -127,8 +127,16 @@ public class DataManager {
 
     public List<LecturerItem> getLecturers(){
         ArrayList<LecturerItem> list = new ArrayList<>();
+        List<EventItem> lec = new ArrayList<>();
+        lec.add(this.getEvents().get(0));
+        lec.add(this.getCourses().get(0));
 
-        return null;
+        list.add(new LecturerItem(new UserItem("Mike", "Done", "mik.don@gmail.com", true, "Seattle", "Northeastern University"),lec));
+        list.add(new LecturerItem(new UserItem("Anderson", "Hou", "mik.don@gmail.com", true, "Seattle", "Northeastern University"),lec));
+        list.add(new LecturerItem(new UserItem("Anna", "Zhang", "mik.don@gmail.com", true, "Seattle", "Northeastern University"),lec));
+        list.add(new LecturerItem(new UserItem("Jackson", "Yu", "mik.don@gmail.com", true, "Seattle", "Northeastern University"),lec));
+
+        return list;
     }
 
     public void addActivity(EventItem activi){

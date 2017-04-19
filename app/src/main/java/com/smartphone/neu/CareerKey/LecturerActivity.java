@@ -21,16 +21,20 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class LecturerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    static UserItem user;
+    static LecturerItem lecturer;
 
     private TextView mTextMessage;
     private ListView eventListView;
 
     ListItemAdapter eventAdapter;
     ListItemAdapter courseAdapter;
-    ListItemAdapter meetingAdapter;
+    LecturerListAdapter meetingAdapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -88,46 +92,18 @@ public class LecturerActivity extends AppCompatActivity
 
         eventListView = (ListView) findViewById(R.id.event_list);
 
-        ArrayList<EventItem> list = new ArrayList<>();
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-//        list.add(new EventItem("first", "Java Dev", new Date(2016, 3, 12, 13, 0), "The java class for students"));
-
+        DataManager manager = new DataManager();
+        List<EventItem> list = manager.getEvents();
 
         eventAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list);
 
-        ArrayList<EventItem> list2 = new ArrayList<>();
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
-//        list2.add(new EventItem("second", "C++ class", new Date(2017, 2, 24, 9, 0), "C++ class for job seekers"));
+        List<EventItem> list2 = manager.getCourses();
 
         courseAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list2);
 
-        ArrayList<EventItem> list3 = new ArrayList<>();
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
-//        list3.add(new EventItem("third", "Database", new Date(2017, 1, 3, 12, 30), "sql language"));
+        List<LecturerItem> list3 = manager.getLecturers();
 
-        meetingAdapter = new ListItemAdapter(this, R.layout.event_item, R.id.title_item, list3);
+        meetingAdapter = new LecturerListAdapter(this, R.layout.lecturer_item, R.id.title_item, list3);
 
 
         eventListView.setAdapter(eventAdapter);
