@@ -44,12 +44,13 @@ class UserItem implements Serializable{
 
 
 
-    UserItem(String firstName, String lastName, String email, boolean type, String city, String state){
+    UserItem(String firstName, String lastName, String email, boolean type, String city, String school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.type = type;
         this.city = city;
+        this.school = school;
     }
 
     public String getFirstName(){

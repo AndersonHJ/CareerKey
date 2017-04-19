@@ -62,11 +62,21 @@ public class UserProfileActivity extends AppCompatActivity {
 
         userEmail.setText(userItem.getEmail());
 
-        userItem.setFirstName(userFirstName.toString());
-        userItem.setLastName(userLastName.toString());
-        userItem.setCity(userCity.toString());
-        userItem.setSchool(userSchool.toString());
-        userItem.setType(userType);
+        if ((userItem.getFirstName() == null || userItem.getFirstName().length() == 0) && userFirstName.toString().length() != 0){
+            userItem.setFirstName(userFirstName.toString());
+        }
+        if ((userItem.getLastName() == null || userItem.getLastName().length() == 0) && userLastName.toString().length() != 0){
+            userItem.setLastName(userLastName.toString());
+        }
+        if ((userItem.getCity() == null || userItem.getCity().length() == 0) && userCity.toString().length() != 0){
+            userItem.setCity(userCity.toString());
+        }
+        if ((userItem.getSchool() == null || userItem.getSchool().length() == 0) && userSchool.toString().length() != 0){
+            userItem.setSchool(userSchool.toString());
+        }
+        if (userItem.getType() == null){
+            userItem.setType(userType);
+        }
 
         userProfileSubmit = (Button) findViewById(R.id.btnUserProfileSubmit);
         userProfileSubmit.setOnClickListener(new uploadUserProfileListener());
@@ -80,6 +90,10 @@ public class UserProfileActivity extends AppCompatActivity {
     class uploadUserProfileListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
+            if (userItem.getLastName() == null || userItem.getFirstName() == null || userItem.getFirstName().length() == 0 || userItem.getLastName().length() == 0) {
+                Toast.makeText(getApplicationContext(), "Please type in Your First Name and Your Last Name!", Toast.LENGTH_LONG).show();
+                return;
+            }
             Intent intent = new Intent();
             intent.setClass(UserProfileActivity.this, MainActivity.class);
             UserProfileActivity.this.startActivity(intent);
