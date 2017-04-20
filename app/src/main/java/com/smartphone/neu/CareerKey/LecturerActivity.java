@@ -30,6 +30,8 @@ public class LecturerActivity extends AppCompatActivity
 //    static LecturerItem lecturer;
 
 
+
+
     private TextView mTextMessage;
     private ListView eventListView;
 
