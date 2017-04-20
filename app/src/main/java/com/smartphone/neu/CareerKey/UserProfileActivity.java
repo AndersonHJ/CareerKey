@@ -23,10 +23,10 @@ public class UserProfileActivity extends AppCompatActivity {
     private EditText userSchool;
     private EditText userEmail;
     private EditText userCity;
-    private RadioGroup userTypeGroup;
-    private RadioButton userTypeStudent;
-    private RadioButton userTypeLecturer;
-    private boolean userType;   //false is student, true is lecturer
+//    private RadioGroup userTypeGroup;
+//    private RadioButton userTypeStudent;
+//    private RadioButton userTypeLecturer;
+//    private boolean userType;   //false is student, true is lecturer
     private Button userProfileSubmit;
     private Intent userProfileIntent;
     private UserItem userItem;
@@ -42,20 +42,20 @@ public class UserProfileActivity extends AppCompatActivity {
         userSchool = (EditText) findViewById(R.id.txtUserSchool);
         userCity = (EditText) findViewById(R.id.txtUserCity);
 
-        userTypeGroup = (RadioGroup) findViewById(R.id.radiogroupUserType);
-        userTypeStudent = (RadioButton) findViewById(R.id.radiobtnUserStudent);
-        userTypeLecturer = (RadioButton) findViewById(R.id.radiobtnUserLecturer);
-
-        userTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (userTypeStudent.getId() == checkedId) {
-                    userType = false;
-                } else if (userTypeLecturer.getId() == checkedId) {
-                    userType = true;
-                }
-            }
-        });
+//        userTypeGroup = (RadioGroup) findViewById(R.id.radiogroupUserType);
+//        userTypeStudent = (RadioButton) findViewById(R.id.radiobtnUserStudent);
+//        userTypeLecturer = (RadioButton) findViewById(R.id.radiobtnUserLecturer);
+//
+//        userTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+//                if (userTypeStudent.getId() == checkedId) {
+//                    userType = false;
+//                } else if (userTypeLecturer.getId() == checkedId) {
+//                    userType = true;
+//                }
+//            }
+//        });
 
         userProfileIntent = new Intent();
         userItem = getUserItem();
@@ -74,12 +74,20 @@ public class UserProfileActivity extends AppCompatActivity {
         if ((userItem.getSchool() == null || userItem.getSchool().length() == 0) && userSchool.toString().length() != 0){
             userItem.setSchool(userSchool.toString());
         }
-        if (userItem.getType() == null){
-            userItem.setType(userType);
-        }
+//        if (userItem.getType() == null){
+//            userItem.setType(userType);
+//        }
 
         userProfileSubmit = (Button) findViewById(R.id.btnUserProfileSubmit);
         userProfileSubmit.setOnClickListener(new uploadUserProfileListener());
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+//        setSupportActionBar(toolbar);
+//
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private UserItem getUserItem() {

@@ -27,6 +27,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -45,14 +46,25 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
+
         <activity android:name=".PublishActivity"/>
-        <activity android:name=".UserProfileActivity"
+        <activity
+            android:name=".UserProfileActivity"
             android:label="@string/title_activity_profile"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".LecturerActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.smartphone.neu.CareerKey.MainActivity"/>
+                android:value="com.smartphone.neu.CareerKey.LecturerActivity"/>
+        </activity>
+        <activity
+            android:name=".testActivity"
+            android:label="@string/title_activity_test"
+            android:parentActivityName=".LecturerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.smartphone.neu.CareerKey.LecturerActivity"/>
         </activity>
     </application>
 

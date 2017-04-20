@@ -160,7 +160,7 @@ public class LecturerActivity extends AppCompatActivity
 
         if (id == R.id.nav_profile) {
             Intent intent = new Intent(LecturerActivity.this, UserProfileActivity.class);
-            intent.putExtra("User", manager.getStudent("hou@gmail.com"));
+            intent.putExtra("User", manager.getUserItem("hou@gmail.com"));
             startActivity(intent);
         } else if (id == R.id.nav_schedule) {
 

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                tools:context="com.smartphone.neu.CareerKey.UserProfileActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+    >
 
 
     <TextView
@@ -9,10 +14,10 @@
         android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
         android:text="Profile"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_above="@+id/txtUserEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"/>
 
     <EditText
         android:id="@+id/txtUserFirstName"
@@ -21,8 +26,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your First Name..."
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/txtUserLastName"
+        android:layout_above="@+id/txtUserSchool"
         android:layout_alignStart="@+id/txtUserLastName"/>
 
     <EditText
@@ -32,8 +36,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your Last Name..."
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/txtUserEmail"
+        android:layout_above="@+id/txtUserFirstName"
         android:layout_alignStart="@+id/txtUserEmail"/>
 
     <EditText
@@ -43,73 +46,96 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email..."
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/profileName"
-        android:layout_centerHorizontal="true"/>
+        android:layout_above="@+id/txtUserFirstName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"/>
 
     <EditText
         android:id="@+id/txtUserSchool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your school..."
-        android:layout_below="@+id/txtUserFirstName"
+        android:layout_above="@+id/txtUserCity"
         android:layout_alignStart="@+id/txtUserFirstName"/>
 
     <EditText
         android:id="@+id/txtUserCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your City..."
-        android:layout_below="@+id/txtUserSchool"
+        android:layout_above="@+id/btnUserProfileSubmit"
         android:layout_alignStart="@+id/txtUserSchool"/>
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:id="@+id/radiogroupUserType"
-        android:weightSum="1"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_below="@+id/txtUserCity"
-        android:layout_alignStart="@+id/txtUserCity"
-        android:layout_alignEnd="@+id/txtUserCity">
+    <!--<RadioGroup-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/radiogroupUserType"-->
+        <!--android:weightSum="1"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_above="@+id/btnUserProfileSubmit"-->
+        <!--android:layout_alignStart="@+id/txtUserCity"-->
+        <!--android:layout_marginBottom="24dp">-->
 
-        <RadioButton
-            android:id="@+id/radiobtnUserLecturer"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/radioGroup"
-            android:checked="false"
-            android:paddingLeft="8dp"
+        <!--<RadioButton-->
+            <!--android:id="@+id/radiobtnUserLecturer"-->
+            <!--android:layout_width="116dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignTop="@+id/radioGroup"-->
+            <!--android:checked="false"-->
+            <!--android:paddingLeft="8dp"-->
 
-            android:text="Lecturer"
-            />
+            <!--android:text="Lecturer"-->
+            <!--/>-->
 
-        <RadioButton
-            android:id="@+id/radiobtnUserStudent"
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
-            android:layout_alignTop="@+id/radioGroup"
-            android:paddingLeft="8dp"
-            android:text="Student"
-            android:layout_weight="0.56"/>
+        <!--<RadioButton-->
+            <!--android:id="@+id/radiobtnUserStudent"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="31dp"-->
+            <!--android:layout_alignTop="@+id/radioGroup"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:text="Student"-->
+            <!--android:layout_weight="0.56"/>-->
 
-    </RadioGroup>
+    <!--</RadioGroup>-->
 
     <Button
         android:id="@+id/btnUserProfileSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radiogroupUserType"
+        android:text="Submit"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="Submit"/>
+        android:layout_marginBottom="23dp"/>
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--android:theme="?attr/actionBarTheme"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentStart="true"/>-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
