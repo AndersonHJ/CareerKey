@@ -17,7 +17,6 @@ public class DataManager {
 
     }
 
-
     public UserItem getUserItem(String email) {
         return new UserItem("Mike", "Done", "mik.don@gmail.com", true, "Seattle", "Northeastern University");
     }

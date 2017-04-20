@@ -29,9 +29,6 @@ public class LecturerActivity extends AppCompatActivity
 //    static UserItem user;
 //    static LecturerItem lecturer;
 
-
-
-
     private TextView mTextMessage;
     private ListView eventListView;
 
