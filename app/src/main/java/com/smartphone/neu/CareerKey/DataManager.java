@@ -17,13 +17,7 @@ public class DataManager {
 
     }
 
-//    public LecturerItem getlecturer(String email){
-//        return null;
-//    }
-//
-//    public UserItem getStudent(String email){
-//        return new UserItem("Mike", "Done", "mik.don@gmail.com", true, "Seattle", "Northeastern University");
-//    }
+
     public UserItem getUserItem(String email) {
         return new UserItem("Mike", "Done", "mik.don@gmail.com", true, "Seattle", "Northeastern University");
     }
