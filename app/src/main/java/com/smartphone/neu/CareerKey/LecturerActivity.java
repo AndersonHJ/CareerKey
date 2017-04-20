@@ -118,7 +118,7 @@ public class LecturerActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(LecturerActivity.this, EventDetailActivity.class);
                 intent.putExtra("Event", (EventItem)adapterView.getItemAtPosition(i));
-                LecturerActivity.this.startActivity(intent);
+                startActivity(intent);
             }
         });
 
