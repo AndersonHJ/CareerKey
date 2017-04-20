@@ -115,6 +115,7 @@ public class LecturerActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+
             }
         });
 
