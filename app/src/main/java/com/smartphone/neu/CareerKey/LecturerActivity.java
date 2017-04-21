@@ -46,14 +46,23 @@ public class LecturerActivity extends AppCompatActivity
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_event);
+                    List<EventItem> list = manager.getEvents();
+                    eventAdapter.clear();
+                    eventAdapter.addAll(list);
                     eventListView.setAdapter(eventAdapter);
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_course);
+                    List<EventItem> list2 = manager.getCourses();
+                    courseAdapter.clear();
+                    courseAdapter.addAll(list2);
                     eventListView.setAdapter(courseAdapter);
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_1v1meeting);
+                    List<LecturerItem> list3 = manager.getLecturers();
+                    meetingAdapter.clear();
+                    meetingAdapter.addAll(list3);
                     eventListView.setAdapter(meetingAdapter);
                     return true;
             }

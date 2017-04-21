@@ -148,7 +148,6 @@ public class DataManager {
 
     }
 
-
     public List<EventItem> getEvents(){
         ArrayList<EventItem> list = new ArrayList<>();
         HTTPClientOpt httpClientOpt = new HTTPClientOpt();
@@ -275,7 +274,7 @@ public class DataManager {
             list.add(new LecturerItem(new UserItem(Integer.parseInt(items[0]), items[1], items[2], items[3], true, items[4], items[5]), lec));
 
         }
-        
+
         return list;
     }
 
