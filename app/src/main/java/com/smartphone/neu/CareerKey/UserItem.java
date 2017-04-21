@@ -32,7 +32,7 @@ class UserItem implements Serializable{
         this.type = type;
     }
 
-
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -40,13 +40,18 @@ class UserItem implements Serializable{
     private Boolean type;
     private String city;
 
-    UserItem(String firstName, String lastName, String email, boolean type, String city, String school){
+    UserItem(int id, String firstName, String lastName, String email, boolean type, String city, String school){
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.type = type;
         this.city = city;
         this.school = school;
+    }
+
+    public int getId(){
+        return this.id;
     }
 
     public String getFirstName(){

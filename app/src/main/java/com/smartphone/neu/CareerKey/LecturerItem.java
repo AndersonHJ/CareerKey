@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public class LecturerItem implements Serializable {
-    private UserItem user;
+    public UserItem user;
     private List<EventItem> posted;
 
     LecturerItem(UserItem user, List<EventItem> posted){

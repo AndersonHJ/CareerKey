@@ -120,12 +120,12 @@ public class SignInActivity extends AppCompatActivity {
                                             Toast.LENGTH_SHORT).show();
                                 } else {
                                     if (userType) {
-                                        UserItem newUser = new UserItem("", "", email, true, "", "");
-                                        LecturerItem newLecturer = new LecturerItem(newUser, new ArrayList<EventItem>());
-                                        dataManager.addLecturer(newLecturer);
+                                       // UserItem newUser = new UserItem("", "", email, true, "", "");
+                                        //LecturerItem newLecturer = new LecturerItem(newUser, new ArrayList<EventItem>());
+                                       // dataManager.addLecturer(newLecturer);
                                     } else {
-                                        UserItem newUser = new UserItem("", "", email, false, "", "");
-                                        dataManager.addStudent(newUser);
+                                       // UserItem newUser = new UserItem("", "", email, false, "", "");
+                                       // dataManager.addStudent(newUser);
                                     }
                                     startActivity(new Intent(SignInActivity.this, MainActivity.class));
                                     finish();

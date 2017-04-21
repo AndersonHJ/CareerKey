@@ -5,9 +5,11 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -125,15 +127,22 @@ public class DataManager {
 
         String[] items = res[0].split("#");
         Log.d(items.length+"", res[0]);
-        return new UserItem(items[1], items[2], items[3], items[6].equals("1")?true:false, items[4], items[5]);
+        return new UserItem(Integer.parseInt(items[0]),items[1], items[2], items[3], items[6].equals("1")?true:false, items[4], items[5]);
     }
 
     public void updateUserItem(UserItem userItem) {
         HTTPClientOpt httpClientOpt = new HTTPClientOpt();
 
-        String sql = "update lecturer set lecturer_firstName="+userItem.getFirstName()+
-                ", lecturer_lastName="+userItem.getLastName()+", email="+userItem.getEmail()+
-                ", city="+userItem.getCity()+", school="+userItem.getSchool()+", type="+(userItem.getType()==true?"1":"0");
+        String sql = null;
+        try{
+          sql = "update lecturer set lecturer_firstName='"+ userItem.getFirstName()+
+                    "', lecturer_lastName='"+userItem.getLastName()+"', email='"+userItem.getEmail()+
+                    "', city='"+userItem.getCity()+"', school='"+userItem.getSchool()+"', type="+(userItem.getType()==true?"1":"0")+
+                    " where email = '"+userItem.getEmail()+"'";
+            sql = URLEncoder.encode(sql, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
         httpClientOpt.executeSQL(sql);
 
@@ -208,6 +217,7 @@ public class DataManager {
             list.add(new EventItem(items[0], parsed, Integer.parseInt(items[2]), items[3],
                     Integer.parseInt(items[4]), items[5], items[6], items[7], items[8], items[9], items[10]));
         }
+
         return list;
     }
 
@@ -262,28 +272,50 @@ public class DataManager {
                         Integer.parseInt(items2[4]), items2[5], items2[6], items2[7], items2[8], items2[9], items2[10]));
             }
 
-            list.add(new LecturerItem(new UserItem(items[1], items[2], items[3], true, items[4], items[5]), lec));
-        }
+            list.add(new LecturerItem(new UserItem(Integer.parseInt(items[0]), items[1], items[2], items[3], true, items[4], items[5]), lec));
 
+        }
+        
         return list;
     }
 
-    public void addActivity(EventItem activi){
-        List<EventItem> list;
-        if(activi.getType()==1)
-            list = this.getEvents();
-        else
-            list = this.getCourses();
+    public void addActivity(EventItem activi, String id){
+        HTTPClientOpt httpClientOpt = new HTTPClientOpt();
 
-        list.add(activi);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+
+    // representation of a date with the defined format.
+        String startTime = df.format(activi.getStartDateTime());
+
+        String sql = "INSERT INTO `activity` (`activity_name`,`activity_startTime`," +
+                "`duration`,`description`,`type`,`publisherID`,`address`,`city`," +
+                "`state`,`image`) VALUES ('"+activi.getTitle()+"','"+startTime+"',"+activi.getDuration()+
+                ",'"+activi.getDescription()+"',"+activi.getType()+","+id+",'"+activi.getAddress()+"','"+
+                activi.getCity()+"','"+activi.getState()+"',NULL)";
+
+        try {
+            sql = URLEncoder.encode(sql, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        httpClientOpt.executeSQL(sql);
+
+
     }
 
-    public void addLecturer(LecturerItem lecturer){
+    public void addUser(UserItem user){
+        HTTPClientOpt httpClientOpt = new HTTPClientOpt();
 
-    }
+        String sql = "INSERT INTO `lecturer` (`lecturer_firstName`, `lecturer_lastName`, `email`," +
+                " `city`, `school`, `type`) VALUES ('"+user.getFirstName()+"','"+user.getLastName()+
+                "','"+user.getEmail()+ "','"+user.getCity()+"','"+user.getSchool()+"',"+(user.getType()==true?"1":"0")+")";
 
-    public void addStudent(UserItem student){
-
+        try {
+            sql = URLEncoder.encode(sql, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        httpClientOpt.executeSQL(sql);
     }
 
     public List<EventItem> getActivityByLecturer(){

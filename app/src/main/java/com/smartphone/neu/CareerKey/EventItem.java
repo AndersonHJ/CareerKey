@@ -50,6 +50,10 @@ public class EventItem implements Serializable {
         return startTime.toString();
     }
 
+    public Date getStartDateTime(){
+        return startTime;
+    }
+
     public int getDuration(){
         return this.duration;
     }
