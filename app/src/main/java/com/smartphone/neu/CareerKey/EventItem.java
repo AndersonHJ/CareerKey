@@ -20,8 +20,8 @@ public class EventItem implements Serializable {
     private String state;
     private String publisher;
 
-    EventItem(String image, String title, Date startTime, String description, int type,
-              String address, String city, String state, int duration, String firstName, String lastName){
+    EventItem(String title, Date startTime, int duration, String description, int type,
+              String address, String city, String state, String image, String firstName, String lastName){
         this.image = image;
         this.title = title;
         this.startTime = startTime;

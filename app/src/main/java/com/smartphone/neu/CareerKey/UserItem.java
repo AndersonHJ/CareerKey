@@ -40,10 +40,6 @@ class UserItem implements Serializable{
     private Boolean type;
     private String city;
 
-
-
-
-
     UserItem(String firstName, String lastName, String email, boolean type, String city, String school){
         this.firstName = firstName;
         this.lastName = lastName;
