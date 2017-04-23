@@ -56,6 +56,28 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.smartphone.neu.CareerKey.MainActivity"/>
         </activity>
+        <activity android:name=".ScheduleActivity">
+            android:label="@string/title_activity_schedule"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.smartphone.neu.CareerKey.MainActivity"/>
+        </activity>
+        <activity android:name=".AddScheduleActivity">
+            android:label="@string/title_activity_addschedule"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.smartphone.neu.CareerKey.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

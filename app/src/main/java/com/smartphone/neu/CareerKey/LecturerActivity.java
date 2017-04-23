@@ -182,7 +182,7 @@ public class LecturerActivity extends AppCompatActivity
         if (id == R.id.nav_profile) {
             startActivity(new Intent(LecturerActivity.this, UserProfileActivity.class));
         } else if (id == R.id.nav_schedule) {
-
+            startActivity(new Intent(LecturerActivity.this, ScheduleActivity.class));
         } else if (id == R.id.nav_setting) {
            // startActivity(new Intent(LecturerActivity.this, SettingsActivity.class));
         } else if (id == R.id.nav_share) {

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class AddScheduleActivity extends AppCompatActivity {
 
@@ -23,5 +24,11 @@ public class AddScheduleActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, itemspm);
         adapterpm.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerpm.setAdapter(adapterpm);
+
+
+        Bundle bundle = getIntent().getExtras();
+        String message = bundle.getString("message");
+        TextView txtView = (TextView) findViewById(R.id.textViewmessege);
+        txtView.setText(message);
     }
 }
