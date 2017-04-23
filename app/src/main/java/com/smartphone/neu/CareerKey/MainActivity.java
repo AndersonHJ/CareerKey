@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    private DataManager dataManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void SignIn() {
-        String email = editTextEMail.getText().toString();
+        final String email = editTextEMail.getText().toString();
         String password = editTextPassword.getText().toString();
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
@@ -84,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                    } else {
+                        UserItem userItem = dataManager.getUserItem(email);
+                        Intent intent = new Intent();
+                        intent.putExtra("User", userItem);
                     }
 
                 }

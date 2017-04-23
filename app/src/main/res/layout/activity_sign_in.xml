@@ -64,14 +64,44 @@
 
 
         <!-- Link to Login Screen -->
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radiogroupUserType"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/radiobtnUserLecturer"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/radioGroup"
+                android:checked="false"
+                android:paddingLeft="8dp"
+
+                android:text="Lecturer"
+                />
+
+            <RadioButton
+                android:id="@+id/radiobtnUserStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_alignTop="@+id/radioGroup"
+                android:paddingLeft="8dp"
+                android:text="Student"
+                android:layout_weight="0.56"/>
+
+        </RadioGroup>
 
         <Button
             android:id="@+id/sign_up_button"
             style="?android:textAppearanceSmall"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="70dp"
+            android:layout_marginTop="20dp"
             android:text="@string/action_sign_in_short"
             android:textSize="9pt"
             android:textStyle="bold"
@@ -94,7 +124,7 @@
             android:layout_marginTop="20dip"
             android:text="Log In Now!"
             android:textAllCaps="false"
-            android:textSize="9pt" />
+            android:textSize="9pt"/>
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

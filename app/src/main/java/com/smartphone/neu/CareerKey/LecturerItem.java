@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public class LecturerItem implements Serializable {
-    private UserItem user;
+    public UserItem user;
     private List<EventItem> posted;
 
     LecturerItem(UserItem user, List<EventItem> posted){
@@ -16,7 +16,28 @@ public class LecturerItem implements Serializable {
         this.posted = posted;
     }
 
+    public String getFirstName(){
+        return this.user.getFirstName();
+    }
 
+    public String getLastName() {
+        return this.user.getLastName();
+    }
+
+    public String getEmail() {
+        return this.user.getEmail();
+    }
+
+    public Boolean getType() {
+        return this.user.getType();
+    }
+
+    public String getCity() {
+        return this.user.getCity();
+    }
+    public String getSchool() {
+        return this.user.getSchool();
+    }
 
 
 }

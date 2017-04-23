@@ -15,54 +15,96 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+
+
 public class UserProfileActivity extends AppCompatActivity {
-    private EditText userName;
+    private EditText userFirstName;
+    private EditText userLastName;
     private EditText userSchool;
+    private EditText userEmail;
     private EditText userCity;
-    private RadioGroup userTypeGroup;
-    private RadioButton userTypeStudent;
-    private RadioButton userTypeLecturer;
-    private boolean userType;   //false is student, true is lecturer
+//    private RadioGroup userTypeGroup;
+//    private RadioButton userTypeStudent;
+//    private RadioButton userTypeLecturer;
+//    private boolean userType;   //false is student, true is lecturer
     private Button userProfileSubmit;
+    private Intent userProfileIntent;
+    private UserItem userItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        userName = (EditText) findViewById(R.id.txtUserName);
+        userFirstName = (EditText) findViewById(R.id.txtUserFirstName);
+        userLastName = (EditText) findViewById(R.id.txtUserLastName);
+        userEmail = (EditText) findViewById(R.id.txtUserEmail);
         userSchool = (EditText) findViewById(R.id.txtUserSchool);
         userCity = (EditText) findViewById(R.id.txtUserCity);
 
-        userTypeGroup = (RadioGroup) findViewById(R.id.radiogroupUserType);
-        userTypeStudent = (RadioButton) findViewById(R.id.radiobtnUserStudent);
-        userTypeLecturer = (RadioButton) findViewById(R.id.radiobtnUserLecturer);
+//        userTypeGroup = (RadioGroup) findViewById(R.id.radiogroupUserType);
+//        userTypeStudent = (RadioButton) findViewById(R.id.radiobtnUserStudent);
+//        userTypeLecturer = (RadioButton) findViewById(R.id.radiobtnUserLecturer);
+//
+//        userTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+//                if (userTypeStudent.getId() == checkedId) {
+//                    userType = false;
+//                } else if (userTypeLecturer.getId() == checkedId) {
+//                    userType = true;
+//                }
+//            }
+//        });
 
-        userTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (userTypeStudent.getId() == checkedId) {
-                    userType = false;
-                } else if (userTypeLecturer.getId() == checkedId) {
-                    userType = true;
-                }
-            }
-        });
+        userProfileIntent = new Intent();
+        userItem = getUserItem();
 
-        Intent intent = new Intent();
-        intent.putExtra("userName", userName.toString());
-        intent.putExtra("userSchool", userSchool.toString());
-        intent.putExtra("userCity", userCity.toString());
-        intent.putExtra("userType", userType);
+        userEmail.setText(userItem.getEmail());
+
+        if ((userItem.getFirstName() == null || userItem.getFirstName().length() == 0) && userFirstName.toString().length() != 0){
+            userItem.setFirstName(userFirstName.toString());
+        }
+        if ((userItem.getLastName() == null || userItem.getLastName().length() == 0) && userLastName.toString().length() != 0){
+            userItem.setLastName(userLastName.toString());
+        }
+        if ((userItem.getCity() == null || userItem.getCity().length() == 0) && userCity.toString().length() != 0){
+            userItem.setCity(userCity.toString());
+        }
+        if ((userItem.getSchool() == null || userItem.getSchool().length() == 0) && userSchool.toString().length() != 0){
+            userItem.setSchool(userSchool.toString());
+        }
+//        if (userItem.getType() == null){
+//            userItem.setType(userType);
+//        }
 
         userProfileSubmit = (Button) findViewById(R.id.btnUserProfileSubmit);
         userProfileSubmit.setOnClickListener(new uploadUserProfileListener());
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+//        setSupportActionBar(toolbar);
+//
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    private UserItem getUserItem() {
+        Intent intent = getIntent();
+        return (UserItem) intent.getSerializableExtra("User");
     }
 
     class uploadUserProfileListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            //upload intent
+            if (userItem.getLastName() == null || userItem.getFirstName() == null || userItem.getFirstName().length() == 0 || userItem.getLastName().length() == 0) {
+                Toast.makeText(getApplicationContext(), "Please type in Your First Name and Your Last Name!", Toast.LENGTH_LONG).show();
+                return;
+            }
+            Intent intent = new Intent();
+            intent.setClass(UserProfileActivity.this, MainActivity.class);
+            UserProfileActivity.this.startActivity(intent);
             Toast.makeText(getApplicationContext(), "Submit Successfully!", Toast.LENGTH_LONG).show();
         }
     }
