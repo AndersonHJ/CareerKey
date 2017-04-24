@@ -12,8 +12,10 @@ public class EventDetailActivity extends AppCompatActivity {
     private TextView title;
     private TextView description;
     private TextView address;
+    private TextView startTimeTitle;
+    private TextView descrTitle;
+    private TextView addressTitle;
     private ImageView image;
-    private Intent eventDetailIntent;
     private EventItem eventItem;
 
     @Override
@@ -26,11 +28,13 @@ public class EventDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         startTime = (TextView) findViewById(R.id.startTime);
+        startTimeTitle = (TextView) findViewById(R.id.timeTitle);
         title = (TextView) findViewById(R.id.title);
         description = (TextView) findViewById(R.id.description);
+        descrTitle = (TextView) findViewById(R.id.descTitle);
         address = (TextView) findViewById(R.id.address);
+        addressTitle = (TextView) findViewById(R.id.addressTitle);
         image = (ImageView) findViewById(R.id.image);
-        eventDetailIntent = new Intent();
         eventItem = getEventItem();
         startTime.setText(eventItem.getStartTime().toString());
         title.setText(eventItem.getTitle().toString());
