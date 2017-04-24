@@ -14,6 +14,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permisson.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +22,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".LecturerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".LoggedInActivity"/>
         <activity
@@ -37,47 +48,17 @@
                 android:resource="@xml/file_paths"/>
         </provider>
 
-        <activity
-            android:name=".LecturerActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
         <activity android:name=".PublishActivity"/>
-        <activity android:name=".UserProfileActivity">
+        <activity
+            android:name=".UserProfileActivity"
             android:label="@string/title_activity_profile"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".LecturerActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.smartphone.neu.CareerKey.MainActivity"/>
+                android:value="com.smartphone.neu.CareerKey.LecturerActivity"/>
         </activity>
-        <activity android:name=".ScheduleActivity">
-            android:label="@string/title_activity_schedule"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.smartphone.neu.CareerKey.MainActivity"/>
-        </activity>
-        <activity android:name=".AddScheduleActivity">
-            android:label="@string/title_activity_addschedule"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.smartphone.neu.CareerKey.MainActivity"/>
-        </activity>
+        <activity android:name=".EventDetailActivity"></activity>
     </application>
 
 </manifest>
