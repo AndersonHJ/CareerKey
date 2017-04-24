@@ -53,6 +53,8 @@ public class PublishActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DataManager dataManager = new DataManager();
+                dataManager.addActivity(null, "");
                 finish();
             }
         });

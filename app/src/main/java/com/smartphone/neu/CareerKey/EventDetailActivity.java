@@ -2,11 +2,8 @@ package com.smartphone.neu.CareerKey;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,11 +25,11 @@ public class EventDetailActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        startTime = (TextView) findViewById(R.id.startTime);
-        title = (TextView) findViewById(R.id.title);
-        description = (TextView) findViewById(R.id.description);
+        startTime = (TextView) findViewById(R.id.e_mail);
+        title = (TextView) findViewById(R.id.School);
+        description = (TextView) findViewById(R.id.City);
         address = (TextView) findViewById(R.id.address);
-        image = (ImageView) findViewById(R.id.image);
+        image = (ImageView) findViewById(R.id.lecutrerImage);
         eventDetailIntent = new Intent();
         eventItem = getEventItem();
         startTime.setText(eventItem.getStartTime().toString());

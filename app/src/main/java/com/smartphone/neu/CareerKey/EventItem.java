@@ -77,4 +77,6 @@ public class EventItem implements Serializable {
     public String getPublisher(){
         return this.publisher;
     }
+
+    public String getClassName() {return "EventItem"; }
 }

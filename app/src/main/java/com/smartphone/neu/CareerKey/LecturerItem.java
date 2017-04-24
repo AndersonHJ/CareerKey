@@ -39,5 +39,5 @@ public class LecturerItem implements Serializable {
         return this.user.getSchool();
     }
 
-
+    public String getClassName(){ return "LecturerItem"; }
 }

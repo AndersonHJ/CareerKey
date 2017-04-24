@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -38,6 +39,8 @@ public class LecturerActivity extends AppCompatActivity
 
     DataManager manager = null;
 
+    private int itemNumber = 1;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -50,6 +53,7 @@ public class LecturerActivity extends AppCompatActivity
                     eventAdapter.clear();
                     eventAdapter.addAll(list);
                     eventListView.setAdapter(eventAdapter);
+                    itemNumber = 1;
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_course);
@@ -57,6 +61,7 @@ public class LecturerActivity extends AppCompatActivity
                     courseAdapter.clear();
                     courseAdapter.addAll(list2);
                     eventListView.setAdapter(courseAdapter);
+                    itemNumber = 2;
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_1v1meeting);
@@ -64,6 +69,7 @@ public class LecturerActivity extends AppCompatActivity
                     meetingAdapter.clear();
                     meetingAdapter.addAll(list3);
                     eventListView.setAdapter(meetingAdapter);
+                    itemNumber = 3;
                     return true;
             }
             return false;
@@ -122,12 +128,46 @@ public class LecturerActivity extends AppCompatActivity
         eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(LecturerActivity.this, EventDetailActivity.class);
-                intent.putExtra("Event", (EventItem)adapterView.getItemAtPosition(i));
-                startActivity(intent);
+                if(itemNumber<3){
+                    Intent intent = new Intent(LecturerActivity.this, EventDetailActivity.class);
+                    intent.putExtra("Event", (EventItem)adapterView.getSelectedItem());
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(LecturerActivity.this, LecturerDetailActivity.class);
+                    intent.putExtra("Lecturer", (LecturerItem)adapterView.getSelectedItem());
+                    startActivity(intent);
+                }
             }
         });
 
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        if(itemNumber==1){
+            mTextMessage.setText(R.string.title_event);
+            List<EventItem> list = manager.getEvents();
+            eventAdapter.clear();
+            eventAdapter.addAll(list);
+            eventListView.setAdapter(eventAdapter);
+        }
+        else if(itemNumber==2){
+            mTextMessage.setText(R.string.title_course);
+            List<EventItem> list2 = manager.getCourses();
+            courseAdapter.clear();
+            courseAdapter.addAll(list2);
+            eventListView.setAdapter(courseAdapter);
+        }
+        else {
+            mTextMessage.setText(R.string.title_1v1meeting);
+            List<LecturerItem> list3 = manager.getLecturers();
+            meetingAdapter.clear();
+            meetingAdapter.addAll(list3);
+            eventListView.setAdapter(meetingAdapter);
+        }
     }
 
     @Override
