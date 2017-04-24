@@ -25,11 +25,11 @@ public class EventDetailActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        startTime = (TextView) findViewById(R.id.e_mail);
-        title = (TextView) findViewById(R.id.School);
-        description = (TextView) findViewById(R.id.City);
+        startTime = (TextView) findViewById(R.id.startTime);
+        title = (TextView) findViewById(R.id.title);
+        description = (TextView) findViewById(R.id.description);
         address = (TextView) findViewById(R.id.address);
-        image = (ImageView) findViewById(R.id.lecutrerImage);
+        image = (ImageView) findViewById(R.id.image);
         eventDetailIntent = new Intent();
         eventItem = getEventItem();
         startTime.setText(eventItem.getStartTime().toString());

@@ -130,12 +130,12 @@ public class LecturerActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(itemNumber<3){
                     Intent intent = new Intent(LecturerActivity.this, EventDetailActivity.class);
-                    intent.putExtra("Event", (EventItem)adapterView.getSelectedItem());
+                    intent.putExtra("Event", (EventItem)adapterView.getItemAtPosition(i));
                     startActivity(intent);
                 }
                 else{
                     Intent intent = new Intent(LecturerActivity.this, LecturerDetailActivity.class);
-                    intent.putExtra("Lecturer", (LecturerItem)adapterView.getSelectedItem());
+                    intent.putExtra("Lecturer", (LecturerItem)adapterView.getItemAtPosition(i));
                     startActivity(intent);
                 }
             }
