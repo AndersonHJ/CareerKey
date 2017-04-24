@@ -60,14 +60,6 @@ public class SignInActivity extends AppCompatActivity {
 
         dataManager = new DataManager();
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(SignInActivity.this, MainActivity.class);
-                SignInActivity.this.startActivity(intent);
-            }
-        });
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,8 +94,6 @@ public class SignInActivity extends AppCompatActivity {
                     return;
                 }
 
-
-
                 progressBar.setVisibility(View.VISIBLE);
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
@@ -119,20 +109,28 @@ public class SignInActivity extends AppCompatActivity {
                                     Toast.makeText(SignInActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    if (userType) {
-                                       // UserItem newUser = new UserItem("", "", email, true, "", "");
-                                        //LecturerItem newLecturer = new LecturerItem(newUser, new ArrayList<EventItem>());
-                                       // dataManager.addLecturer(newLecturer);
-                                    } else {
-                                       // UserItem newUser = new UserItem("", "", email, false, "", "");
-                                       // dataManager.addStudent(newUser);
-                                    }
-                                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
+
+                                    UserItem newUser = new UserItem(0, "", "", email, userType, "", "");
+                                    dataManager.addUser(newUser);
+
+                                    UserItem user = dataManager.getUserItem(email);
+                                    Intent intent = new Intent(SignInActivity.this, LecturerActivity.class);
+                                    intent.putExtra("User", user);
+                                    startActivity(intent);
                                     finish();
                                 }
                             }
                         });
 
+            }
+        });
+
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

@@ -30,11 +30,14 @@ public class PublishActivity extends AppCompatActivity {
     private RadioButton course, event;
     private RadioGroup group;
 
+    private UserItem user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish);
+
+        user = (UserItem) getIntent().getSerializableExtra("User");
 
         title = (EditText) findViewById(R.id.txtTitle);
         time = (EditText) findViewById(R.id.txtStartTime);
@@ -89,15 +92,16 @@ public class PublishActivity extends AppCompatActivity {
                 if(selectId == course.getId()){
                     type = 2;
                 }
-                else{
+                else if(selectId == event.getId()){
                     type = 1;
                 }
 
                 DataManager dataManager = new DataManager();
-//                dataManager.addActivity(new EventItem(title.getText().toString(), new Date(year, month, day, hour, minute),
-//                        Integer.parseInt(duration.getText().toString()), description.getText().toString(),
-//                        type, address.getText().toString(), city.getText().toString(), state.getText().toString(), ), "");
-                //finish();
+                dataManager.addActivity(new EventItem(title.getText().toString(), new Date(year, month, day, hour, minute),
+                        Integer.parseInt(duration.getText().toString()), description.getText().toString(),
+                        type, address.getText().toString(), city.getText().toString(), state.getText().toString(), "",
+                        user.getFirstName(), user.getLastName()), user.getId()+"");
+                finish();
             }
         });
 

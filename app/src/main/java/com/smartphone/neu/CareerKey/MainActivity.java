@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dataManager = new DataManager();
 
         //initialize UI elements;
         editTextEMail = (EditText) findViewById(R.id.editTextEMail);
@@ -88,8 +89,10 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                     } else {
                         UserItem userItem = dataManager.getUserItem(email);
-                        Intent intent = new Intent();
+                        Intent intent = new Intent(MainActivity.this, LecturerActivity.class);
                         intent.putExtra("User", userItem);
+                        startActivity(intent);
+                        finish();
                     }
 
                 }

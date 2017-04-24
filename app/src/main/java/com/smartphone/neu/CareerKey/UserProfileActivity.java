@@ -31,6 +31,8 @@ public class UserProfileActivity extends AppCompatActivity {
     private Intent userProfileIntent;
     private UserItem userItem;
 
+    private  DataManager dataManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,7 @@ public class UserProfileActivity extends AppCompatActivity {
         userSchool = (EditText) findViewById(R.id.txtUserSchool);
         userCity = (EditText) findViewById(R.id.txtUserCity);
 
+        dataManager = new DataManager();
 //        userTypeGroup = (RadioGroup) findViewById(R.id.radiogroupUserType);
 //        userTypeStudent = (RadioButton) findViewById(R.id.radiobtnUserStudent);
 //        userTypeLecturer = (RadioButton) findViewById(R.id.radiobtnUserLecturer);
@@ -114,9 +117,17 @@ public class UserProfileActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Please type in Your First Name and Your Last Name!", Toast.LENGTH_LONG).show();
                 return;
             }
-            Intent intent = new Intent();
-            intent.setClass(UserProfileActivity.this, LecturerActivity.class);
-            UserProfileActivity.this.startActivity(intent);
+            userItem.setCity(userCity.getText().toString());
+            userItem.setEmail(userEmail.getText().toString());
+            userItem.setSchool(userSchool.getText().toString());
+            userItem.setType(userItem.getType());
+            userItem.setFirstName(userFirstName.getText().toString());
+            userItem.setLastName(userLastName.getText().toString());
+
+            dataManager.updateUserItem(userItem);
+
+            Intent intent = new Intent(UserProfileActivity.this, LecturerActivity.class);
+            startActivity(intent);
             Toast.makeText(getApplicationContext(), "Submit Successfully!", Toast.LENGTH_LONG).show();
         }
     }

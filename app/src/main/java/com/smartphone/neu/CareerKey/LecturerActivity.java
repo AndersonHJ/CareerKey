@@ -27,7 +27,7 @@ import java.util.List;
 public class LecturerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-//    static UserItem user;
+    UserItem user;
 //    static LecturerItem lecturer;
 
     private TextView mTextMessage;
@@ -85,11 +85,14 @@ public class LecturerActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        user = (UserItem) getIntent().getSerializableExtra("User");
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LecturerActivity.this, PublishActivity.class);
+                intent.putExtra("User", user);
                 startActivity(intent);
             }
         });
@@ -106,6 +109,8 @@ public class LecturerActivity extends AppCompatActivity
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
 
         eventListView = (ListView) findViewById(R.id.event_list);
 
@@ -210,10 +215,13 @@ public class LecturerActivity extends AppCompatActivity
 
         if (id == R.id.nav_profile) {
             Intent intent = new Intent(LecturerActivity.this, UserProfileActivity.class);
-            intent.putExtra("User", manager.getUserItem("mike.done@gmail.com"));
+            intent.putExtra("User", user);
             startActivity(intent);
         } else if (id == R.id.nav_schedule) {
-            startActivity(new Intent(LecturerActivity.this, ScheduleActivity.class));
+            Intent intent = new Intent(LecturerActivity.this, ScheduleActivity.class);
+            startActivity(intent);
+            intent.putExtra("User", user);
+            startActivity(intent);
         } else if (id == R.id.nav_setting) {
            // startActivity(new Intent(LecturerActivity.this, SettingsActivity.class));
         } else if (id == R.id.nav_share) {
