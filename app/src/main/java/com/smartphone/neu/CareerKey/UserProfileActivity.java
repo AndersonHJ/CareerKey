@@ -61,6 +61,18 @@ public class UserProfileActivity extends AppCompatActivity {
         userItem = getUserItem();
 
         userEmail.setText(userItem.getEmail());
+        if (userItem.getFirstName() != null && userItem.getFirstName().length() != 0) {
+            userFirstName.setText(userItem.getFirstName());
+        }
+        if (userItem.getLastName() != null && userItem.getLastName().length() != 0) {
+            userLastName.setText(userItem.getLastName());
+        }
+        if (userItem.getSchool() != null && userItem.getSchool().length() != 0) {
+            userSchool.setText(userItem.getSchool());
+        }
+        if (userItem.getCity() != null && userItem.getCity().length() != 0) {
+            userCity.setText(userItem.getCity());
+        }
 
         if ((userItem.getFirstName() == null || userItem.getFirstName().length() == 0) && userFirstName.toString().length() != 0){
             userItem.setFirstName(userFirstName.toString());
@@ -103,7 +115,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent();
-            intent.setClass(UserProfileActivity.this, MainActivity.class);
+            intent.setClass(UserProfileActivity.this, LecturerActivity.class);
             UserProfileActivity.this.startActivity(intent);
             Toast.makeText(getApplicationContext(), "Submit Successfully!", Toast.LENGTH_LONG).show();
         }

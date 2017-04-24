@@ -15,9 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
-        android:layout_above="@+id/txtUserEmail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"/>
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/txtUserFirstName"
@@ -26,8 +26,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your First Name..."
-        android:layout_above="@+id/txtUserSchool"
-        android:layout_alignStart="@+id/txtUserLastName"/>
+        android:layout_below="@+id/txtUserLastName"
+        android:layout_alignStart="@+id/txtUserLastName"
+        android:layout_marginTop="20dp"/>
+
 
     <EditText
         android:id="@+id/txtUserLastName"
@@ -36,8 +38,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your Last Name..."
-        android:layout_above="@+id/txtUserFirstName"
-        android:layout_alignStart="@+id/txtUserEmail"/>
+        android:layout_below="@+id/txtUserEmail"
+        android:layout_alignStart="@+id/txtUserEmail"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:id="@+id/txtUserEmail"
@@ -46,9 +49,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email..."
-        android:layout_above="@+id/txtUserFirstName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="37dp"/>
+        android:layout_below="@+id/profileName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="74dp"
+        android:layout_marginTop="55dp"/>
 
     <EditText
         android:id="@+id/txtUserSchool"
@@ -57,8 +61,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your school..."
-        android:layout_above="@+id/txtUserCity"
-        android:layout_alignStart="@+id/txtUserFirstName"/>
+        android:layout_below="@+id/txtUserFirstName"
+        android:layout_alignStart="@+id/txtUserFirstName"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:id="@+id/txtUserCity"
@@ -67,8 +72,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your City..."
-        android:layout_above="@+id/btnUserProfileSubmit"
-        android:layout_alignStart="@+id/txtUserSchool"/>
+        android:layout_below="@+id/txtUserSchool"
+        android:layout_alignStart="@+id/txtUserSchool"
+        android:layout_marginTop="20dp"/>
 
     <!--<RadioGroup-->
         <!--android:layout_width="wrap_content"-->
@@ -110,7 +116,7 @@
         android:text="Submit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="23dp"/>
+        android:layout_marginBottom="16dp"/>
 
     <!--<android.support.v7.widget.Toolbar-->
         <!--android:id="@+id/toolbar2"-->
