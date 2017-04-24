@@ -92,7 +92,7 @@
         </activity>
         <activity
             android:name=".LecturerDetailActivity"
-            android:label="@string/detail_activity"
+            android:label="Lecturer Detail"
             android:parentActivityName=".LecturerActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

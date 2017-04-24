@@ -102,5 +102,14 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp" />
 
+    <TextView
+        android:text="Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imgSrc" />
+
 
 </RelativeLayout>

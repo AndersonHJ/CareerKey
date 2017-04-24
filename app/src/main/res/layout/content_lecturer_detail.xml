@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="60dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.smartphone.neu.CareerKey.LecturerDetailActivity"
     tools:showIn="@layout/activity_lecturer_detail">
@@ -20,39 +20,50 @@
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/Name"
-        android:layout_marginBottom="30dp"
-        android:layout_toRightOf="@+id/LecturerImage"
-        android:text="email" />
+        android:layout_marginBottom="15dp"
+        android:text="email"
+        android:layout_toEndOf="@+id/emailTitle" />
+
+
 
     <TextView
-        android:id="@+id/School"
+        android:text="City: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/LecturerEmail"
-        android:layout_marginBottom="30dp"
-        android:layout_toRightOf="@+id/LecturerImage"
-        android:text="School" />
+        android:id="@+id/cityTitle"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        android:layout_alignBottom="@+id/LecturerImage"
+        android:layout_alignEnd="@+id/emailTitle"
+        android:layout_marginEnd="10dp" />
 
     <TextView
-        android:id="@+id/City"
+        android:text="School: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/School"
-        android:layout_centerHorizontal="false"
-        android:layout_toRightOf="@+id/LecturerImage"
-        android:text="City" />
+        android:id="@+id/schoolTitle"
+        android:layout_alignBaseline="@+id/School"
+        android:layout_alignBottom="@+id/School"
+        android:layout_toEndOf="@+id/LecturerImage"
+        android:layout_marginBottom="30dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
-    <ImageView
-        android:id="@+id/LecturerImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <TextView
+        android:text="Email: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Name"
+        android:layout_toEndOf="@+id/LecturerImage"
+        android:id="@+id/emailTitle"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
-        android:layout_alignParentStart="false"
+    <TextView
+        android:text="Name: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="20dp"
-        android:src="@android:drawable/ic_menu_myplaces" />
+        android:layout_toEndOf="@+id/LecturerImage"
+        android:id="@+id/nameTitle"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
     <TextView
         android:id="@+id/Name"
@@ -60,8 +71,36 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="false"
-        android:layout_marginBottom="30dp"
-        android:layout_toRightOf="@+id/LecturerImage"
-        android:text="Name" />
+        android:layout_marginBottom="15dp"
+        android:text="Name"
+        android:layout_toEndOf="@+id/nameTitle" />
+
+    <ImageView
+        android:id="@+id/LecturerImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/School"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="School"
+        android:layout_below="@+id/LecturerEmail"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/schoolTitle"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:id="@+id/City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:layout_alignBottom="@+id/cityTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/cityTitle" />
 
 </RelativeLayout>

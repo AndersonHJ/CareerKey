@@ -17,6 +17,7 @@ public class EventDetailActivity extends AppCompatActivity {
     private TextView addressTitle;
     private ImageView image;
     private EventItem eventItem;
+    private TextView imgSrc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,9 @@ public class EventDetailActivity extends AppCompatActivity {
         title.setText(eventItem.getTitle().toString());
         description.setText(eventItem.getDescription().toString());
         address.setText(eventItem.getAddress().toString());
+
+        imgSrc = (TextView) findViewById(R.id.imgSrc);
+        imgSrc.setText(eventItem.getImage().toString());
     }
 
     private EventItem getEventItem() {
